@@ -38,14 +38,14 @@ SELECT * FROM Boxes WHERE value_real > 150;
 
 SELECT DISTINCT contents FROM Boxes;
 
-SELECT warehouse, COUNT (*) AS box_count
+SELECT warehouse, COUNT(*) AS box_count
 FROM Boxes
 GROUP BY warehouse;
 
-SELECT warehouse, COUNT (*) AS box_count
+SELECT warehouse, COUNT(*) AS box_count
 FROM Boxes
 GROUP BY warehouse
-HAVING COUNT (*) > 2;
+HAVING COUNT(*) > 2;
 
 INSERT INTO Warehouses(code, location, capacity)  VALUES (6, 'New York', 3);
 
@@ -64,6 +64,6 @@ WHERE value_real < 150;
 
 DELETE FROM Boxes
 USING Warehouses
-WHERE Boxes.warehouse = Warehouses.code
+WHERE warehouse = Warehouses.code
 AND Warehouses.location = 'New York'
 RETURNING Boxes.*;
