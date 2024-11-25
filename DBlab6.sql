@@ -65,7 +65,7 @@ INSERT INTO employees (first_name, last_name, email, phone_number, salary, depar
 ('Nursultan', 'Mansurov', 'nurs.mansurov@example.com', '+7 709 123 4567', 64000, 9),
 ('Aboba', 'Yeleussizova', 'aboba.yeleussizova@example.com', '+7 710 123 4567', 71000, 10);
 
-SELECT --3task
+SELECT --3
     employees.first_name, employees.last_name, employees.department_id, d.department_name
 FROM employees
 JOIN departments d on employees.department_id = d.department_id
@@ -74,7 +74,7 @@ SELECT --4
     employees.first_name, employees.last_name, employees.department_id, d.department_name
 FROM employees
 JOIN departments d on employees.department_id = d.department_id
-WHERE employees.department_id IN (40, 80)
+WHERE employees.department_id IN (40, 80);
 
 SELECT --5
     employees.first_name, employees.last_name, departments.department_name, locations.city, locations.state_province
